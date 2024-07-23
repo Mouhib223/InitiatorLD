@@ -13,4 +13,17 @@
     <PackageReference Include="QuickFIXn.FIX4.4" Version="1.11.2" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Reference Include="QuickFix">
+			<HintPath>..\QuickFix.dll</HintPath>
+		</Reference>
+		<Reference Include="QuickFix.FIX44">
+			<HintPath>..\..\..\quickfixn-v1.11.2\bin\net6.0\QuickFix.FIX44.dll</HintPath>
+		</Reference>
+	</ItemGroup>	
+	<ItemGroup>
+		<None Update="conf.cfg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 </Project>

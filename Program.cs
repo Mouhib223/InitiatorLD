@@ -2,23 +2,27 @@
 using QuickFix;
 using System.Reflection;
 using InitiatorLD;
+using static System.Net.Mime.MediaTypeNames;
+using QuickFix.Fields;
 
 public class Program {
     static void Main(string[] args)
     {
 
+        try
+        {
+            InitiatorApp.Run();
+
+        }
+        catch (System.Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
+        }
+        Environment.Exit(1);
 
 
-        var outputDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        SessionSettings settings = new SessionSettings(outputDirectory + "\\InitiatorConfig.cfg");
-        InitiatorApp myApp = new InitiatorApp();
-        IMessageStoreFactory storeFactory = new FileStoreFactory(settings);
-        ILogFactory logFactory = new FileLogFactory(settings);
-        SocketInitiator initiator = new SocketInitiator(
-            myApp,
-            storeFactory,
-            settings,
-            logFactory);
+
     }
 
 }
