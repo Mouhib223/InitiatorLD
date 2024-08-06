@@ -121,7 +121,7 @@ namespace InitiatorLD
 
             while (true)
             {
-                Console.Title = "Broker";
+                Console.Title = "Initiator";
                 Console.Clear();
                 Title();
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -129,7 +129,7 @@ namespace InitiatorLD
                 Console.WriteLine("Make your order");
                 Say("1", "Enter Order");
                 Say("2", "Cancel Order");
-                Say("3", "Replace Order");
+                Say("3", "CancelReplace Order");
                 Say("4", "Market data test");
                 Say("Q", "Quit");
                 Console.WriteLine("Action: ");
